@@ -1,0 +1,35 @@
+{
+  "name": "webpack-pug-template",
+  "version": "1.0.0",
+  "description": "Webpack 2 template for light coding",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "0.28.7",
+    "file-loader": "1.1.5",
+    "html-webpack-plugin": "2.30.1",
+    "node-sass": "4.7.2",
+    "node-static": "0.7.10",
+    "pug": "2.0.0-rc.4",
+    "pug-loader": "2.3.0",
+    "sass-loader": "6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.4",
+    "webpack-merge": "4.1.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --env development",
+    "build": "webpack --env production",
+    "serv": "static build",
+    "clean": "rm -rf build"
+  },
+  "author": "Tony Chupak",
+  "dependencies": {
+    "extract-text-webpack-plugin": "3.0.2",
+    "ress": "1.2.2"
+  }
+}
