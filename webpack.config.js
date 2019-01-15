@@ -13,19 +13,25 @@ const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
 
 const PATH = {
-	source: path.join(__dirname, 'source'),
-	build: path.join(__dirname, 'build')
+  source: path.join(__dirname, 'source'),
+  build: path.join(__dirname, 'build')
 };
 
 const common = merge([
-	{
-		entry: {
-			'index': PATH.source + '/pages/index/index.js',
-		},
+  {
+    entry: {
+      'index': PATH.source + '/pages/index/index.js',
+    },
 
 		output: {
 			path: PATH.build,
 			filename: 'js/[name].js'
+		},
+
+		optimization: {
+      splitChunks: {
+        chunks: 'all'
+			}
 		},
 
 		plugins: [
@@ -34,9 +40,6 @@ const common = merge([
 				filename: 'index.html',
 				chunks: ['index', 'common'],
 				template: PATH.source + '/pages/index/index.pug'
-			}),
-			new webpack.optimize.CommonsChunkPlugin({
-				name: 'common'
 			})
   	]
 	},
@@ -49,7 +52,7 @@ const common = merge([
 module.exports = function(env) {
   if (env === 'development') {
     return merge([
-			common,
+    	common,
 			devserver(),
 			sass(),
 			css()
