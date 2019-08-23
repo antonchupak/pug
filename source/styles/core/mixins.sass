@@ -1,0 +1,12 @@
+=center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+// fast media-query with max-width
+// usage:
+// +m(768)
+=m($width)
+  @media only screen and (max-width: $width+ "px")
+    @content

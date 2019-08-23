@@ -1,36 +1,49 @@
 {
-  "name": "webpack-pug-template",
-  "version": "1.0.0",
-  "description": "Webpack template for light coding",
+  "name": "pug",
+  "version": "2.0.0",
+  "description": "A boilerplate for light coding",
   "main": "index.js",
   "license": "MIT",
-  "devDependencies": {
-    "autoprefixer": "^9.4.5",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^2.1.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^3.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.11.0",
-    "node-static": "0.7.10",
-    "postcss-loader": "^3.0.0",
-    "pug": "^2.0.3",
-    "pug-loader": "^2.4.0",
-    "ress": "^1.2.2",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14",
-    "webpack-merge": "^4.2.1"
+  "homepage": "https://github.com/antonchupak/pug#readme",
+  "author": "Anton Chupak <tony.chupak@gmail.com> (https://github.com/antonchupak)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonchupak/pug.git"
   },
+  "keywords": [
+    "boilerplate",
+    "webpack",
+    "pug",
+    "es-6",
+    "sass"
+  ],
   "scripts": {
-    "start": "webpack-dev-server --env development",
-    "build": "webpack --env production",
+    "start": "webpack-dev-server --mode development",
+    "build": "yarn clean && webpack --mode=production",
     "serv": "static build",
     "clean": "rm -rf build"
   },
-  "author": "Anton Chupak"
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.4.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "node-static": "^0.7.11",
+    "postcss-loader": "^3.0.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "ress": "^1.2.2",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
+  }
 }

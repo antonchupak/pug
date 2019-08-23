@@ -6,4 +6,8 @@ html
     title
       block title
   body
+    header
+      a(href='https://webpack.js.org').logo
+        img(src=require('./../../../media/images/webpack_logo.svg'))
+      include nav
     block main
