@@ -18,10 +18,10 @@
     "sass"
   ],
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --open",
     "build": "yarn clean && webpack --mode=production",
     "serv": "static build",
-    "clean": "rm -rf build"
+    "clean": "rm -rf ./build/*"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",

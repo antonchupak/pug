@@ -49,9 +49,6 @@ All files related to _scripts / images / styles_ will have hash-name to avoid ca
 │   └── pug                   # general folder
 │       ├── pages             # separate folder for each page
 │       └── styles            # common styles related to all pages (theme, mixins, variables, etc)
-├── .babelrc.json             # babel config
-├── .eslintrc.json            # ESLint config
-├── .postcss.config.js        # POSTCSS config
 ├── webpack.config.js         # general webpack fonfig file
 ```
 

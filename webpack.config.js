@@ -14,96 +14,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
 
 // LOADERS
+const LOADERS = require('./config/loaders');
+
 const PATH = {
-  source: path.join(__dirname, 'source'),
   build: path.join(__dirname, 'build'),
+  source: path.join(__dirname, 'source'),
   media: path.join(__dirname, 'source/media'),
   styles: path.join(__dirname, 'source/styles')
 };
 
-const JS_LOADER = {
-  test: /\.js$/,
-  use: [
-    'babel-loader'
-  ]
-};
-
-const PUG_LOADER = {
-  test: /\.pug$/,
-  use: [
-    {
-      loader: 'pug-loader',
-      options: {
-        pretty: true
-      }
-    }
-  ]
-};
-
-const CSS_LOADER = {
-  test: /\.css$/,
-  use: [
-    'style-loader',
-    'css-loader'
-  ]
-};
-
-const SASS_PROD_LOADER = {
-  // Support .sass and .scss
-  test: /\.s[ac]ss$/,
-  use: [
-    MiniCssExtractPlugin.loader,
-    'css-loader',
-    'sass-loader'
-  ]
-};
-
-const SASS_DEV_LOADER = {
-  // Support .sass and .scss
-  test: /\.s[ac]ss$/,
-  use: [
-    'style-loader',
-    {
-      loader: 'css-loader',
-      options: {
-        sourceMap: true
-      }
-    },
-    {
-      loader: 'sass-loader',
-      options: {
-        sourceMap: true
-      }
-    }
-  ]
-}
-
-const FILE_LOADER = {
-  test: /\.(jpg|png|svg)$/,
-  use: [
-    {
-      loader: 'file-loader',
-      options: {
-        name: 'images/[name].[hash].[ext]'
-      }
-    }
-  ]
-};
-
-const FONTS_LOADER = {
-  test: /\.(eot|woff|woff2|ttf)$/,
-  use: [
-    {
-      loader: 'file-loader',
-      options: {
-        name: 'fonts/[name].[ext]'
-      }
-    }
-  ]
-};
-
-// Main webpack config
-const config = {
+// Base webpack config
+const base = {
   /**
    * What happens there?
    * We need to create multiple pages and each page require to own `entry`.
@@ -121,14 +42,7 @@ const config = {
   },
 
   module: {
-    rules: [
-      JS_LOADER,
-      PUG_LOADER,
-      CSS_LOADER,
-      SASS_PROD_LOADER,
-      FILE_LOADER,
-      FONTS_LOADER
-    ]
+    rules: LOADERS
   },
 
   optimization: {
@@ -175,14 +89,24 @@ const config = {
   ])
 };
 
+const dev = {
+  devtool: 'cheap-module-source-map',
+  watch: true,
+  devServer: {
+    contentBase: PATH.build
+  }
+};
+
+const prod = {
+  devtool: 'source-map'
+};
+
 module.exports = (env, argv) => {
   if (argv.mode === 'development') {
-    
+    return merge(base, dev);
   }
 
   if (argv.mode === 'production') {
-    //
+    return merge(base, prod);
   }
-
-  return config;
 };
