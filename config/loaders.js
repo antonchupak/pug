@@ -16,6 +16,10 @@ const BABEL_LOADER = {
   }
 };
 
+const MINI_CSS_EXTRACT_PLUGIN = {
+  loader: MiniCssExtractPlugin.loader
+};
+
 const CSS_LOADER = {
   loader: 'css-loader',
   options: {
@@ -68,7 +72,7 @@ const loaders = [
   {
     test: /\.css$/,
     use: [
-      MiniCssExtractPlugin.loader,
+      MINI_CSS_EXTRACT_PLUGIN,
       CSS_LOADER,
       POST_CSS_LOADER
     ]
@@ -77,7 +81,7 @@ const loaders = [
     // Support .sass and .scss
     test: /\.s[ac]ss$/,
     use: [
-      MiniCssExtractPlugin.loader,
+      MINI_CSS_EXTRACT_PLUGIN,
       CSS_LOADER,
       POST_CSS_LOADER,
       SASS_LOADER

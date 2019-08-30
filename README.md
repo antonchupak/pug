@@ -49,20 +49,20 @@ All files related to _scripts / images / styles_ will have hash-name to avoid ca
 │   └── pug                   # general folder
 │       ├── pages             # separate folder for each page
 │       └── styles            # common styles related to all pages (theme, mixins, variables, etc)
+├── pages.js                  # list of pages (file for adding new pages)
 ├── webpack.config.js         # general webpack fonfig file
 ```
 
 #### ？ Common questions
 
 - ##### _How to add a new page_
-  It's very simple!
-    * Create folder for a new page in `source/pug/pages/[new_page_title]`. In this folder.
-    * Create two files inside this folder `[new_page_title].pug` and `[new_page_title].js`.
-    * Add `new_page_title` in __pages.js__ located in root project folder.
-    * if you need, import `main.sass` file in your `[new_page_title].sass` file for including common styles (mixins, variables, etc)
+  __Necessarily__
+  * Add `new_page_title` in __pages.js__ located in root project folder.
+  * Create folder for new page in `source/pug/pages/[new_page_title]`.
+  * Create two reqiered files inside created folder `[new_page_title].pug` and `[new_page_title].js`.
+
+  __Optional__
+  * if you need, import `main.sass` file in your `[new_page_title].sass` file for including common styles (mixins, variables, etc)
 
 - ##### _Add image from media in tag `<img>`_
   ![Example](https://i.imgur.com/oSSqC50.png)
-
-#### TODO
-  * configure `DEV` mode

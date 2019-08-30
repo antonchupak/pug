@@ -18,8 +18,10 @@
     "sass"
   ],
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "yarn clean && webpack --mode=production",
+    "dev": "webpack-dev-server --mode development",
+    "prod": "webpack --mode production",
+    "start": "yarn clean && yarn dev --open",
+    "build": "yarn clean && yarn prod",
     "serv": "static build",
     "clean": "rm -rf ./build/*"
   },
