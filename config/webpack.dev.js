@@ -14,7 +14,7 @@ const dev = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'syles/[name].css',
+      filename: 'styles/[name].css',
       chunkFilename: 'styles/[id].css',
     })
   ]

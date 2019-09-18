@@ -17,7 +17,10 @@ const BABEL_LOADER = {
 };
 
 const MINI_CSS_EXTRACT_PLUGIN = {
-  loader: MiniCssExtractPlugin.loader
+  loader: MiniCssExtractPlugin.loader,
+  options: {
+    publicPath: '../'
+  }
 };
 
 const CSS_LOADER = {

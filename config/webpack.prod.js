@@ -13,7 +13,7 @@ const prod = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'syles/[name].[hash].css',
+      filename: 'styles/[name].[hash].css',
       chunkFilename: 'styles/[id].[hash].css',
     })
   ]
