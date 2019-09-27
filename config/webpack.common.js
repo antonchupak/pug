@@ -35,9 +35,9 @@ const common = {
       chunks: 'all',
       cacheGroups: {
         commons: {
-          name: 'commons',
+          name: 'common',
           chunks: 'initial',
-          minChunks: 2
+          minChunks: 1
         }
       }
     }
@@ -60,7 +60,7 @@ const common = {
   plugins: PAGES.map((page) => new HtmlWebpackPlugin({
     template: PATHS.source + `/pug/pages/${page}/${page}.pug`,
     filename: `${page}.html`,
-    chunks: ['commons', page],
+    chunks: ['common', page],
     inject: 'body'
   })).concat([
     new webpack.ProvidePlugin({
