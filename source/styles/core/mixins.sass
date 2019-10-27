@@ -1,3 +1,4 @@
+// absolute element centred
 =center
   position: absolute
   top: 50%
@@ -10,3 +11,14 @@
 =m($width)
   @media only screen and (max-width: $width+ "px")
     @content
+
+// fast font-family
+// usage:
+// +font(black, cytiapro-black-webfont)
+=font($alias, $name)
+  @font-face
+    font-family: $alias
+    src: url("../../../media/fonts/" + $name + ".eot")
+    src: url("../../../media/fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../../../media/fonts/" + $name + ".woff2") format("woff2"), url("../../../media/fonts/" + $name + ".woff") format("woff"), url("../../../media/fonts/" + $name + ".ttf") format("truetype")
+    font-weight: normal
+    font-style: normal

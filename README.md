@@ -66,3 +66,11 @@ All files related to _scripts / images / styles_ will have hash-name to avoid ca
 
 - ##### _Add image from media in tag `<img>`_
   ![Example](https://i.imgur.com/oSSqC50.png)
+
+- ##### _Add fonts to project_
+  * You need to prepare font in four formats: _TTF, EOT, WOFF, WOFF2_
+  * Place font files in `./source/media/fonts`
+  * Connect your font with awesome mixin and pass two params: `+font('Name In Project As You Want', 'font-file-name')`
+  * Done!
+  
+  P.S. You can find example with Roboto Reagular in `./source/styles/parts/base.sass`

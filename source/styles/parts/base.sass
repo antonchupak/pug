@@ -1,3 +1,12 @@
+// Call mixin for add font to project
++font('Roboto Regular', 'roboto-regular')
+
+// Create mixin for quick fonts applying
+=font-regular
+  font-family: 'Roboto Regular', sans-serif
+  font-weight: 400
+
+
 html,
 body
   width: 100%
@@ -8,6 +17,7 @@ body
   font-weight: 300
   text-align: center
   overflow: hidden
+  +font-regular
 
 h1
   color: #fff

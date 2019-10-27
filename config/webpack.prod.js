@@ -17,6 +17,6 @@ const prod = {
       chunkFilename: 'styles/[id].[hash].css',
     })
   ]
-}
+};
 
 module.exports = prod;
